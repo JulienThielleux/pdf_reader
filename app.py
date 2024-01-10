@@ -21,6 +21,12 @@ for file in files:
                 raw_text += text
                 size += len(text)
         print(f'Size of file: {size}')
+    if file.endswith('.txt'):
+        print(file)
+        with open(f'files/{file}', 'r', encoding='utf-8') as f:
+            txt_read = f.read()
+            raw_text += txt_read
+            print(f'Size of file: {len(txt_read)}')
 
 #Split the texts into 500 char chunks with 100 char overlap.
 text_splitter = CharacterTextSplitter(
